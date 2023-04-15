@@ -10,6 +10,7 @@ screen.tracer(0)
 
 tim = Player()
 car_manager = CarManager()
+level = Scoreboard()
 
 screen.listen()
 screen.onkeypress(tim.move_turtle, "Up")
@@ -27,6 +28,10 @@ while game_is_on:
         if tim.distance(car) < 20:
             game_is_on = False
 
+    if tim.ycor() > 280:
+        tim.reset_position()
+        level.new_level()
+        car_manager.new_level()
 
 
 

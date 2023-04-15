@@ -18,4 +18,7 @@ class Player(Turtle):
     def move_turtle(self):
         self.fd(MOVE_DISTANCE)
 
+    def reset_position(self):
+        self.goto(STARTING_POSITION)
+
 

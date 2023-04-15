@@ -1,5 +1,4 @@
 from turtle import Turtle
-import time
 import random
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
@@ -28,3 +27,9 @@ class CarManager():
     def move_car(self):
         for car in self.all_cars:
             car.fd(STARTING_MOVE_DISTANCE)
+
+    def new_level(self):
+        new_speed = STARTING_MOVE_DISTANCE + MOVE_INCREMENT
+        # try to think of how to make move_car function take in a variable input
+        for car in self.all_cars:
+            car.fd(new_speed)

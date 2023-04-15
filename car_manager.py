@@ -3,10 +3,10 @@ import random
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
-MOVE_INCREMENT = 10
+MOVE_INCREMENT = 5
 
 
-class CarManager():
+class CarManager:
 
     def __init__(self):
         self.all_cars = []

@@ -15,23 +15,22 @@ level = Scoreboard()
 screen.listen()
 screen.onkeypress(tim.move_turtle, "Up")
 
-
 game_is_on = True
 
 while game_is_on:
 
     time.sleep(0.1)
     screen.update()
+
     car_manager.create_car()
     car_manager.move_car()
+
     for car in car_manager.all_cars:
         if tim.distance(car) < 20:
             game_is_on = False
 
-    if tim.ycor() > 280:
+    # detect successful finish
+    if tim.is_at_finish_line():
         tim.reset_position()
-        level.new_level()
         car_manager.new_level()
-
-
-
+        level.new_level()

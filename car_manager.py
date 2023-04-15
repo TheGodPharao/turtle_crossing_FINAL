@@ -10,6 +10,7 @@ class CarManager():
 
     def __init__(self):
         self.all_cars = []
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def create_car(self):
         random_chance = random.randint(1, 6)
@@ -26,10 +27,8 @@ class CarManager():
 
     def move_car(self):
         for car in self.all_cars:
-            car.fd(STARTING_MOVE_DISTANCE)
+            car.fd(self.car_speed)
 
     def new_level(self):
-        new_speed = STARTING_MOVE_DISTANCE + MOVE_INCREMENT
-        # try to think of how to make move_car function take in a variable input
-        for car in self.all_cars:
-            car.fd(new_speed)
+        self.car_speed += MOVE_INCREMENT
+
